@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-<title>happy anniversary 2 bulan - fran</title>
+<title>happy anniversary 2 bulan - fran untuk keysha</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{min-height:100vh;display:flex;justify-content:center;align-items:center;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Helvetica Neue',sans-serif;background:radial-gradient(ellipse at top,#4a0e2e 0%,#2b0519 40%,#150208 100%);background-attachment:fixed;position:relative;overflow-x:hidden;overflow-y:auto;padding:20px 10px;color:#fff;-webkit-font-smoothing:antialiased}
+html,body{min-height:100vh;display:flex;justify-content:center;align-items:center;font-family:'Poppins',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:radial-gradient(ellipse at top,#4a0e2e 0%,#2b0519 40%,#150208 100%);background-attachment:fixed;position:relative;overflow-x:hidden;overflow-y:auto;padding:20px 10px;color:#fff;-webkit-font-smoothing:antialiased;font-weight:400}
 body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle at 20% 30%,rgba(255,20,147,.18) 0%,transparent 40%),radial-gradient(circle at 80% 70%,rgba(199,21,133,.18) 0%,transparent 40%);pointer-events:none;z-index:0}
 .cursor-heart{position:fixed;pointer-events:none;font-size:1.1rem;z-index:9999;animation:cursorHeartFade 1.2s ease-out forwards;filter:drop-shadow(0 0 8px #ff1493)}
 @keyframes cursorHeartFade{0%{transform:translate(-50%,-50%) scale(1);opacity:1}100%{transform:translate(-50%,-150%) scale(.3);opacity:0}}
@@ -21,7 +22,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 #loading.hide{opacity:0;visibility:hidden}
 .loading-heart{font-size:5rem;animation:loadingHeartBeat 1.2s ease-in-out infinite;filter:drop-shadow(0 0 40px #ff1493);color:#ff1493}
 @keyframes loadingHeartBeat{0%,100%{transform:scale(1)}25%{transform:scale(1.3)}50%{transform:scale(1)}75%{transform:scale(1.2)}}
-.loading-text{color:#ffb6d9;font-size:1.1rem;font-weight:500;letter-spacing:2px;text-shadow:0 0 20px #ff1493}
+.loading-text{color:#ffb6d9;font-size:1.05rem;font-weight:400;letter-spacing:2px;text-shadow:0 0 20px #ff1493}
 .loading-bar{width:220px;height:6px;background:rgba(255,20,147,.15);border-radius:20px;overflow:hidden;box-shadow:0 0 20px rgba(255,20,147,.3)}
 .loading-bar-fill{height:100%;width:0;background:linear-gradient(90deg,#ff1493,#ff69b4,#ffb6d9);border-radius:20px;animation:loadingFill 2.8s ease-in-out forwards;box-shadow:0 0 20px #ff1493}
 @keyframes loadingFill{0%{width:0}100%{width:100%}}
@@ -32,36 +33,39 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 .page{display:none;width:100%;justify-content:center;align-items:center}
 .page.active{display:flex;animation:pageIn .6s ease-out}
 @keyframes pageIn{0%{opacity:0;transform:scale(.95)}100%{opacity:1;transform:scale(1)}}
-#welcome .welcome-title{font-size:2.6rem;font-weight:600;color:#ffb6d9;text-shadow:0 0 30px rgba(255,20,147,.6);margin-bottom:.5rem;line-height:1.2;display:block;letter-spacing:-.5px}
-#welcome .welcome-sub{font-size:1.9rem;color:#ff69b4;font-weight:500;margin-bottom:.3rem;display:block;line-height:1.3}
-#welcome .welcome-date{font-size:1rem;color:#ff8fc7;opacity:.85;margin-bottom:1rem;display:block;font-style:italic}
+#welcome .welcome-title{font-family:'Playfair Display',Georgia,serif;font-size:3rem;font-weight:600;color:#ffb6d9;text-shadow:0 0 30px rgba(255,20,147,.6);margin-bottom:.5rem;line-height:1.15;display:block;letter-spacing:0}
+#welcome .welcome-sub{font-size:1.8rem;color:#ff69b4;font-weight:500;margin-bottom:.3rem;display:block;line-height:1.3;letter-spacing:.5px}
+#welcome .welcome-date{font-size:1rem;color:#ff8fc7;opacity:.9;margin-bottom:1rem;display:block;font-weight:400;letter-spacing:.5px}
 #welcome .welcome-love{font-size:1.6rem;color:#ff1493;opacity:.85;margin-bottom:1.5rem;letter-spacing:14px;display:block;line-height:1.5;animation:heartPulseText 2s ease-in-out infinite;filter:drop-shadow(0 0 10px #ff1493)}
 @keyframes heartPulseText{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.08);opacity:1}}
+.names-badge{display:flex;justify-content:center;align-items:center;gap:.8rem;margin:1rem auto 1.2rem;font-size:1.3rem;font-weight:500;color:#ffd9e8;flex-wrap:wrap}
+.names-badge .name{background:linear-gradient(160deg,rgba(255,20,147,.2),rgba(199,21,133,.1));padding:.5rem 1.3rem;border-radius:50px;border:1px solid rgba(255,105,180,.35);box-shadow:0 4px 20px rgba(255,20,147,.3);letter-spacing:.5px}
+.names-badge .heart-icon{font-size:1.6rem;color:#ff1493;animation:heartPulseText 1.5s ease-in-out infinite;filter:drop-shadow(0 0 15px #ff1493)}
 .countdown-box{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:480px;margin:1rem auto 1.5rem}
 .countdown-item{background:linear-gradient(160deg,rgba(255,20,147,.15),rgba(199,21,133,.08));border-radius:18px;padding:.9rem .5rem;border:1px solid rgba(255,105,180,.15)}
-.countdown-num{font-size:1.7rem;font-weight:600;color:#ffb6d9;line-height:1;display:block;text-shadow:0 0 15px rgba(255,20,147,.6)}
-.countdown-label{font-size:.7rem;color:#ff69b4;letter-spacing:1px;margin-top:.3rem;display:block;font-weight:500;opacity:.9}
-.countdown-title{color:#ff8fc7;font-size:.9rem;font-style:italic;margin-bottom:.5rem;opacity:.9}
-.btn{display:inline-block;padding:1rem 3rem;background:linear-gradient(135deg,#ff1493,#c71585);color:#fff;font-size:1.2rem;font-weight:500;border:none;border-radius:60px;cursor:pointer;box-shadow:0 12px 40px rgba(255,20,147,.5);transition:all .3s;border:1px solid rgba(255,182,217,.3);position:relative;overflow:hidden;animation:btnPulse 2s ease-in-out infinite;font-family:inherit}
+.countdown-num{font-size:1.7rem;font-weight:600;color:#ffb6d9;line-height:1;display:block;text-shadow:0 0 15px rgba(255,20,147,.6);font-family:'Poppins',sans-serif}
+.countdown-label{font-size:.7rem;color:#ff69b4;letter-spacing:1px;margin-top:.3rem;display:block;font-weight:400;opacity:.9;text-transform:lowercase}
+.countdown-title{color:#ff8fc7;font-size:.9rem;font-style:italic;margin-bottom:.5rem;opacity:.9;font-weight:300}
+.btn{display:inline-block;padding:1rem 3rem;background:linear-gradient(135deg,#ff1493,#c71585);color:#fff;font-size:1.15rem;font-weight:500;border:none;border-radius:60px;cursor:pointer;box-shadow:0 12px 40px rgba(255,20,147,.5);transition:all .3s;border:1px solid rgba(255,182,217,.3);position:relative;overflow:hidden;animation:btnPulse 2s ease-in-out infinite;font-family:'Poppins',sans-serif;letter-spacing:.5px}
 @keyframes btnPulse{0%,100%{box-shadow:0 12px 40px rgba(255,20,147,.5)}50%{box-shadow:0 12px 50px rgba(255,20,147,.9),0 0 50px rgba(255,105,180,.6)}}
 .btn:hover{transform:translateY(-4px) scale(1.05);background:linear-gradient(135deg,#ff3ba8,#e91e8a)}
 .btn:active{transform:scale(.96)}
-.anniv-badge{display:inline-block;padding:.5rem 1.5rem;background:linear-gradient(135deg,#ff1493,#c71585);color:#fff;font-weight:500;font-size:.95rem;border-radius:50px;letter-spacing:1.5px;margin-bottom:1.3rem;box-shadow:0 8px 30px rgba(255,20,147,.6)}
-#lockscreen .card h2{font-size:1.8rem;color:#ffb6d9;margin-bottom:.2rem;font-weight:500}
-#lockscreen .card h2 span{display:block;font-size:1rem;color:#ff69b4;margin-top:.3rem;font-weight:400;opacity:.9}
-.pin-display{font-size:2.2rem;letter-spacing:14px;color:#ffb6d9;background:linear-gradient(160deg,rgba(255,20,147,.15),rgba(199,21,133,.08));padding:.6rem 1rem;border-radius:20px;margin:.8rem auto 1.2rem;min-height:65px;display:flex;align-items:center;justify-content:center;border:2px dashed rgba(255,105,180,.3);font-weight:500;max-width:340px;text-shadow:0 0 15px rgba(255,20,147,.5)}
+.anniv-badge{display:inline-block;padding:.5rem 1.5rem;background:linear-gradient(135deg,#ff1493,#c71585);color:#fff;font-weight:500;font-size:.9rem;border-radius:50px;letter-spacing:1.5px;margin-bottom:1.3rem;box-shadow:0 8px 30px rgba(255,20,147,.6);text-transform:lowercase}
+#lockscreen .card h2{font-family:'Playfair Display',Georgia,serif;font-size:1.7rem;color:#ffb6d9;margin-bottom:.2rem;font-weight:500;letter-spacing:0}
+#lockscreen .card h2 span{display:block;font-family:'Poppins',sans-serif;font-size:.95rem;color:#ff69b4;margin-top:.3rem;font-weight:300;opacity:.9;font-style:normal}
+.pin-display{font-size:2.2rem;letter-spacing:14px;color:#ffb6d9;background:linear-gradient(160deg,rgba(255,20,147,.15),rgba(199,21,133,.08));padding:.6rem 1rem;border-radius:20px;margin:.8rem auto 1.2rem;min-height:65px;display:flex;align-items:center;justify-content:center;border:2px dashed rgba(255,105,180,.3);font-weight:500;max-width:340px;text-shadow:0 0 15px rgba(255,20,147,.5);font-family:'Poppins',sans-serif}
 .pin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:280px;margin:0 auto .8rem}
-.pin-btn{padding:1rem 0;font-size:1.6rem;font-weight:500;background:linear-gradient(160deg,rgba(255,20,147,.15),rgba(199,21,133,.08));border:1px solid rgba(255,105,180,.25);border-radius:18px;cursor:pointer;color:#ffb6d9;transition:all .15s;font-family:inherit}
+.pin-btn{padding:1rem 0;font-size:1.6rem;font-weight:500;background:linear-gradient(160deg,rgba(255,20,147,.15),rgba(199,21,133,.08));border:1px solid rgba(255,105,180,.25);border-radius:18px;cursor:pointer;color:#ffb6d9;transition:all .15s;font-family:'Poppins',sans-serif}
 .pin-btn:hover{background:linear-gradient(160deg,rgba(255,20,147,.35),rgba(199,21,133,.2));transform:scale(1.06);color:#fff}
 .pin-btn:active{transform:scale(.94)}
 .pin-btn.empty{background:transparent;cursor:default;pointer-events:none;border-color:transparent}
 .pin-actions{display:flex;justify-content:center;gap:14px;margin:.3rem 0 .8rem;flex-wrap:wrap}
-.pin-actions button{padding:.6rem 1.8rem;border:none;border-radius:40px;font-size:.95rem;font-weight:500;cursor:pointer;transition:all .2s;background:linear-gradient(160deg,rgba(255,20,147,.2),rgba(199,21,133,.1));color:#ffb6d9;border:1px solid rgba(255,105,180,.3);font-family:inherit}
+.pin-actions button{padding:.6rem 1.8rem;border:none;border-radius:40px;font-size:.9rem;font-weight:400;cursor:pointer;transition:all .2s;background:linear-gradient(160deg,rgba(255,20,147,.2),rgba(199,21,133,.1));color:#ffb6d9;border:1px solid rgba(255,105,180,.3);font-family:'Poppins',sans-serif}
 .pin-actions button:hover{background:linear-gradient(160deg,rgba(255,20,147,.4),rgba(199,21,133,.25));transform:scale(1.05);color:#fff}
-.pin-error{color:#ff8fc7;font-size:.95rem;min-height:2.4rem;font-weight:400;padding:.3rem}
-.pin-error.success{color:#90ee90;text-shadow:0 0 15px rgba(144,238,144,.6)}
-#envelope .card h2{font-size:1.9rem;color:#ffb6d9;margin-bottom:.3rem;font-weight:500}
-#envelope .sub-text{color:#ff8fc7;font-size:1rem;margin-bottom:1.5rem;opacity:.9}
+.pin-error{color:#ff8fc7;font-size:.92rem;min-height:2.4rem;font-weight:300;padding:.3rem;font-style:italic}
+.pin-error.success{color:#90ee90;text-shadow:0 0 15px rgba(144,238,144,.6);font-style:normal}
+#envelope .card h2{font-family:'Playfair Display',Georgia,serif;font-size:1.8rem;color:#ffb6d9;margin-bottom:.3rem;font-weight:500;letter-spacing:0}
+#envelope .sub-text{color:#ff8fc7;font-size:.98rem;margin-bottom:1.5rem;opacity:.9;font-weight:300}
 .envelope-container{display:flex;justify-content:center;align-items:center;margin:.5rem 0 1.2rem;cursor:pointer;transition:transform .3s;animation:envFloat 2.5s ease-in-out infinite}
 @keyframes envFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 .envelope-container:hover{transform:scale(1.08)}
@@ -70,38 +74,38 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 .envelope-svg .envelope-flap{fill:#ff69b4;stroke:#ff1493;stroke-width:2}
 .envelope-svg .envelope-heart{fill:#ff1493;transform-origin:center;animation:heartBeat 1.8s ease-in-out infinite}
 @keyframes heartBeat{0%,100%{transform:scale(1)}15%{transform:scale(1.25)}30%{transform:scale(1)}45%{transform:scale(1.18)}60%{transform:scale(1)}}
-.click-hint{color:#ff69b4;font-size:.95rem;opacity:.85;animation:pulse 2s ease-in-out infinite}
+.click-hint{color:#ff69b4;font-size:.92rem;opacity:.85;animation:pulse 2s ease-in-out infinite;font-weight:300;font-style:italic}
 @keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
 .music-visualizer{display:flex;justify-content:center;align-items:flex-end;gap:4px;height:40px;margin:1rem auto;max-width:200px}
 .music-bar{width:4px;background:linear-gradient(to top,#ff1493,#ff69b4,#ffb6d9);border-radius:3px;animation:musicBounce 1s ease-in-out infinite}
 .music-bar:nth-child(1){animation-delay:0s}.music-bar:nth-child(2){animation-delay:.1s}.music-bar:nth-child(3){animation-delay:.2s}.music-bar:nth-child(4){animation-delay:.3s}.music-bar:nth-child(5){animation-delay:.4s}.music-bar:nth-child(6){animation-delay:.5s}.music-bar:nth-child(7){animation-delay:.6s}.music-bar:nth-child(8){animation-delay:.7s}.music-bar:nth-child(9){animation-delay:.8s}.music-bar:nth-child(10){animation-delay:.9s}
 @keyframes musicBounce{0%,100%{height:8px}50%{height:36px}}
-.typewriter{display:inline-block;overflow:hidden;border-right:2px solid #ff1493;white-space:nowrap;animation:typing 5s steps(40,end) infinite,blink .8s step-end infinite;max-width:100%;font-size:1rem;color:#ffb6d9;font-weight:400;padding-right:4px;font-style:italic}
+.typewriter{display:inline-block;overflow:hidden;border-right:2px solid #ff1493;white-space:nowrap;animation:typing 5s steps(40,end) infinite,blink .8s step-end infinite;max-width:100%;font-size:.98rem;color:#ffb6d9;font-weight:300;padding-right:4px;font-style:italic}
 @keyframes typing{0%{width:0}50%{width:100%}100%{width:100%}}
 @keyframes blink{0%,100%{border-color:transparent}50%{border-color:#ff1493}}
 .slide-photo{display:none}
 .slide-photo.active{display:block;animation:slideIn .6s ease-out}
 @keyframes slideIn{0%{opacity:0;transform:translateX(30px)}100%{opacity:1;transform:translateX(0)}}
-#romantic .card h2{font-size:1.8rem;color:#ffb6d9;margin-bottom:.3rem;font-weight:500}
-#romantic .card .sub-romantic{color:#ff8fc7;font-size:.95rem;margin-bottom:1.2rem;opacity:.9;font-style:italic}
+#romantic .card h2{font-family:'Playfair Display',Georgia,serif;font-size:1.7rem;color:#ffb6d9;margin-bottom:.3rem;font-weight:500;letter-spacing:0}
+#romantic .card .sub-romantic{color:#ff8fc7;font-size:.92rem;margin-bottom:1.2rem;opacity:.9;font-style:italic;font-weight:300}
 .photo-frame{position:relative;width:100%;max-width:500px;margin:0 auto 1.2rem;padding:16px;background:linear-gradient(135deg,#ff1493,#c71585,#ff69b4,#c71585,#ff1493);background-size:300% 300%;border-radius:32px;box-shadow:0 0 40px rgba(255,20,147,.6),0 0 80px rgba(255,20,147,.3);animation:frameBg 5s ease infinite}
 @keyframes frameBg{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-.photo-frame-inner{position:relative;border-radius:22px;overflow:hidden;background:#1a0310;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;color:#ff69b4;font-size:1rem}
+.photo-frame-inner{position:relative;border-radius:22px;overflow:hidden;background:#1a0310;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;color:#ff69b4;font-size:.95rem;font-weight:300}
 .photo-frame-inner img{width:100%;height:100%;object-fit:cover;display:block}
 .frame-corner{position:absolute;font-size:2.2rem;opacity:.95;z-index:3;filter:drop-shadow(0 0 12px rgba(255,20,147,.9))}
 .frame-corner.tl{top:-4px;left:-4px}.frame-corner.tr{top:-4px;right:-4px}.frame-corner.bl{bottom:-4px;left:-4px}.frame-corner.br{bottom:-4px;right:-4px}
 .romantic-quotes{margin:.5rem 0 1.2rem;padding:1.3rem;background:linear-gradient(160deg,rgba(255,20,147,.1),rgba(199,21,133,.05));border-radius:22px;border-left:3px solid #ff1493;border-right:3px solid #ff1493}
-.romantic-quotes p{color:#ffd9e8;font-size:1rem;line-height:1.8;margin-bottom:.5rem}
+.romantic-quotes p{color:#ffd9e8;font-size:.98rem;line-height:1.8;margin-bottom:.5rem;font-weight:300}
 .romantic-quotes p:last-child{margin-bottom:0}
 .romantic-quotes .heart-divider{display:block;font-size:1.2rem;color:#ff1493;margin:.5rem 0;letter-spacing:10px}
-.romantic-quotes .signature{font-style:italic;color:#ffb6d9;font-weight:500;font-size:1.05rem;margin-top:.6rem}
+.romantic-quotes .signature{font-style:italic;color:#ffb6d9;font-weight:400;font-size:1.02rem;margin-top:.6rem}
 .big-love-wrapper{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.2rem;padding:.3rem 0}
 .big-love{font-size:8rem;line-height:1;color:#ff1493;text-shadow:0 0 30px #ff1493,0 0 60px #ff1493,0 0 100px #c71585;animation:loveGlow 1.8s ease-in-out infinite alternate;display:inline-block;margin:0}
 @keyframes loveGlow{0%{transform:scale(1)}50%{transform:scale(1.15)}100%{transform:scale(1.08)}}
-.big-love-text{font-size:2.3rem;font-weight:600;color:#ffb6d9;text-shadow:0 0 30px rgba(255,20,147,.7);letter-spacing:2px;margin:0;line-height:1.2}
-.big-love-sub{font-size:1.1rem;color:#ff8fc7;font-style:italic;letter-spacing:1.5px;margin:0;line-height:1.5;opacity:.95}
+.big-love-text{font-family:'Playfair Display',Georgia,serif;font-size:2.3rem;font-weight:600;color:#ffb6d9;text-shadow:0 0 30px rgba(255,20,147,.7);letter-spacing:1px;margin:0;line-height:1.2}
+.big-love-sub{font-size:1.05rem;color:#ff8fc7;font-style:italic;letter-spacing:1px;margin:0;line-height:1.5;opacity:.95;font-weight:300}
 .slide-nav{display:flex;justify-content:center;gap:12px;margin-top:1rem;flex-wrap:wrap;padding:.5rem 0}
-.slide-nav .btn-nav{padding:.8rem 2.3rem;border:none;border-radius:40px;font-size:1rem;font-weight:500;cursor:pointer;transition:all .3s;background:linear-gradient(135deg,#ff1493,#c71585);color:#fff;box-shadow:0 8px 30px rgba(255,20,147,.5);min-width:120px;font-family:inherit}
+.slide-nav .btn-nav{padding:.8rem 2.3rem;border:none;border-radius:40px;font-size:.98rem;font-weight:400;cursor:pointer;transition:all .3s;background:linear-gradient(135deg,#ff1493,#c71585);color:#fff;box-shadow:0 8px 30px rgba(255,20,147,.5);min-width:120px;font-family:'Poppins',sans-serif;letter-spacing:.5px}
 .slide-nav .btn-nav:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 12px 45px rgba(255,20,147,.8)}
 .slide-nav .btn-nav:active{transform:scale(.95)}
 .slide-nav .btn-nav-secondary{background:linear-gradient(160deg,rgba(255,20,147,.2),rgba(199,21,133,.1));color:#ffb6d9;border:1px solid rgba(255,105,180,.3)}
@@ -111,28 +115,29 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 #bgMusic{display:none}
 .gift-box{display:inline-block;font-size:4rem;cursor:pointer;animation:giftShake 1.5s ease-in-out infinite;filter:drop-shadow(0 0 25px rgba(255,20,147,.9))}
 @keyframes giftShake{0%,100%{transform:rotate(0) scale(1)}25%{transform:rotate(-8deg) scale(1.05)}50%{transform:rotate(0) scale(1)}75%{transform:rotate(8deg) scale(1.05)}}
-.gift-message{color:#ffb6d9;font-size:.95rem;font-style:italic;margin-top:.8rem;opacity:.9}
+.gift-message{color:#ffb6d9;font-size:.92rem;font-style:italic;margin-top:.8rem;opacity:.9;font-weight:300}
 .wish-star{font-size:1.8rem;display:inline-block;animation:wishTwinkle 2s ease-in-out infinite;cursor:pointer;transition:transform .3s;filter:drop-shadow(0 0 8px #ff1493)}
 .wish-star:hover{transform:scale(1.3) rotate(20deg)}
 .wish-star:nth-child(1){animation-delay:0s}.wish-star:nth-child(2){animation-delay:.3s}.wish-star:nth-child(3){animation-delay:.6s}.wish-star:nth-child(4){animation-delay:.9s}.wish-star:nth-child(5){animation-delay:1.2s}
 @keyframes wishTwinkle{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.2);opacity:1}}
 .love-letter{background:linear-gradient(160deg,rgba(255,20,147,.12),rgba(199,21,133,.06));border-radius:22px;padding:1.5rem;margin:1rem auto;max-width:500px;box-shadow:0 8px 35px rgba(255,20,147,.3);border:2px dashed rgba(255,105,180,.4);position:relative;text-align:left}
 .love-letter::before{content:'\1F48C';position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:2rem}
-.love-letter-text{color:#ffd9e8;font-size:.95rem;line-height:1.8;font-style:italic;margin-top:.5rem}
-.love-letter-sign{text-align:right;color:#ffb6d9;font-weight:500;margin-top:.8rem;font-size:1.05rem}
+.love-letter-text{color:#ffd9e8;font-size:.95rem;line-height:1.8;font-style:italic;margin-top:.5rem;font-weight:300}
+.love-letter-sign{text-align:right;color:#ffb6d9;font-weight:400;margin-top:.8rem;font-size:1.02rem;font-style:italic}
 @media(max-width:600px){
 .card{padding:1.8rem 1.2rem;border-radius:28px;max-width:97%}
-#welcome .welcome-title{font-size:1.9rem}#welcome .welcome-sub{font-size:1.4rem}#welcome .welcome-love{font-size:1.3rem;letter-spacing:10px;margin-bottom:1.3rem}
+#welcome .welcome-title{font-size:2.1rem}#welcome .welcome-sub{font-size:1.35rem}#welcome .welcome-love{font-size:1.3rem;letter-spacing:10px;margin-bottom:1.3rem}
+.names-badge{font-size:1.05rem;gap:.5rem}.names-badge .name{padding:.4rem 1rem}.names-badge .heart-icon{font-size:1.3rem}
 .btn{padding:.8rem 2.3rem;font-size:1rem}
 .photo-frame{max-width:95%;padding:12px}.frame-corner{font-size:1.6rem}
 .slide-nav .btn-nav{padding:.7rem 1.6rem;font-size:.9rem;min-width:100px}
-.romantic-quotes p{font-size:.9rem}#romantic .card h2{font-size:1.5rem}
-.big-love{font-size:5rem}.big-love-text{font-size:1.7rem}.big-love-sub{font-size:.95rem}
+.romantic-quotes p{font-size:.88rem}#romantic .card h2{font-size:1.4rem}
+.big-love{font-size:5rem}.big-love-text{font-size:1.6rem}.big-love-sub{font-size:.92rem}
 .pin-grid{gap:8px;max-width:230px}.pin-btn{padding:.8rem 0;font-size:1.3rem}
 .pin-display{font-size:1.6rem;letter-spacing:10px;min-height:55px}
-#lockscreen .card h2{font-size:1.4rem}
+#lockscreen .card h2{font-size:1.3rem}
 .envelope-svg{width:140px;height:110px}
-.anniv-badge{font-size:.85rem;padding:.4rem 1.2rem}
+.anniv-badge{font-size:.8rem;padding:.4rem 1.2rem}
 .countdown-box{gap:6px}.countdown-num{font-size:1.2rem}.countdown-label{font-size:.6rem}
 .gift-box{font-size:3rem}
 }
@@ -142,7 +147,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 
 <div id="loading">
 <div class="loading-heart">&#128149;</div>
-<div class="loading-text">menyiapkan kejutan<span class="loading-dots"></span></div>
+<div class="loading-text">menyiapkan kejutan untuk keysha<span class="loading-dots"></span></div>
 <div class="loading-bar"><div class="loading-bar-fill"></div></div>
 </div>
 
@@ -156,7 +161,11 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 <div class="card">
 <div class="anniv-badge">&#127881; 2 months anniversary &#127881;</div>
 <div class="welcome-title">happy anniversary</div>
-<div class="welcome-sub">&#128151; fran &amp; sayang &#128151;</div>
+<div class="names-badge">
+<span class="name">fran</span>
+<span class="heart-icon">&#10084;&#65039;</span>
+<span class="name">keysha</span>
+</div>
 <div class="welcome-date">&#10024; 2 bulan penuh cinta &amp; kebahagiaan &#10024;</div>
 <div class="welcome-love">&#10084; &#10047; &#10084; &#10047; &#10084;</div>
 <div class="countdown-title">&#128158; kita sudah bersama selama:</div>
@@ -167,7 +176,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 <div class="countdown-item"><span class="countdown-num" id="cd-sec">00</span><span class="countdown-label">detik</span></div>
 </div>
 <div style="margin:1rem 0;">
-<span class="typewriter">aku akan selalu mencintaimu, selamanya &#128149;</span>
+<span class="typewriter">aku akan selalu mencintaimu, keysha &#128149;</span>
 </div>
 <div class="music-visualizer">
 <div class="music-bar"></div><div class="music-bar"></div><div class="music-bar"></div>
@@ -181,7 +190,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 
 <div id="lockscreen" class="page">
 <div class="card">
-<h2>&#128274; masukkan pin <span>&#128150; khusus buat cewe kesayangan fran &#128150;</span></h2>
+<h2>&#128274; masukkan pin <span>&#128150; khusus buat keysha cewe kesayangan fran &#128150;</span></h2>
 <div style="font-size:1.1rem;margin-bottom:0.8rem;letter-spacing:10px;color:#ff1493;opacity:0.7;">&#10084; &#10047; &#10084;</div>
 <div class="pin-display" id="pinDisplay">&mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash; &mdash;</div>
 <div class="pin-grid">
@@ -209,7 +218,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 <div id="envelope" class="page">
 <div class="card">
 <h2>&#128140; ada surat anniversary</h2>
-<p class="sub-text">klik amplopnya ya sayang &#128149;</p>
+<p class="sub-text">klik amplopnya ya keysha &#128149;</p>
 <div class="envelope-container" onclick="openEnvelope()">
 <svg class="envelope-svg" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
 <rect class="envelope-body" x="10" y="40" width="180" height="110" rx="8"/>
@@ -228,7 +237,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 <div id="romantic" class="page">
 <div class="card">
 <div class="anniv-badge">&#128149; happy 2nd month anniversary &#128149;</div>
-<h2>&#128150; untuk cewe kesayangan fran &#128150;</h2>
+<h2>&#128150; untuk keysha, cewe kesayangan fran &#128150;</h2>
 <p class="sub-romantic">&#10024; lima kenangan indah untukmu &#10024;</p>
 <div class="slide-indicator">
 <span class="dot active" id="dot1"></span>
@@ -247,12 +256,12 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 <div class="photo-frame-inner"><img src="FOTO_1" alt="foto 1" onerror="this.style.display='none';this.parentElement.innerHTML='&#128247; foto 1'"></div>
 </div>
 <div class="romantic-quotes">
-<p>&#127801; selamat anniversary 2 bulan, cintaku,</p>
+<p>&#127801; selamat anniversary 2 bulan, keysha cintaku,</p>
 <p>dua bulan bukan waktu yang lama, tapi cukup buat aku sadar kalau kamu adalah orang paling berharga dalam hidupku.</p>
 <span class="heart-divider">&#10084;&#65039; &#10024; &#128149;</span>
 <p>setiap hari bersamamu terasa seperti hadiah. senyummu, tawamu, dan perhatianmu bikin hariku selalu cerah.</p>
 <span class="heart-divider">&#128150; &#127800; &#128150;</span>
-<p class="signature">&#128140; dari seseorang yang selalu menyayangimu,<br><span style="font-size:1.2rem;">&#128151; fran &#128151;</span></p>
+<p class="signature">&#128140; dari fran, yang selalu menyayangimu,<br><span style="font-size:1.15rem;">&#128151; fran &#128151;</span></p>
 </div>
 <div class="slide-nav">
 <button class="btn-nav" onclick="nextSlide()">&#10148; selanjutnya</button>
@@ -268,12 +277,12 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 <div class="photo-frame-inner"><img src="FOTO_2" alt="foto 2" onerror="this.style.display='none';this.parentElement.innerHTML='&#128247; foto 2'"></div>
 </div>
 <div class="romantic-quotes">
-<p>&#128149; untuk cewe terbaik di dunia,</p>
+<p>&#128149; untuk keysha, cewe terbaik di dunia,</p>
 <p>terima kasih sudah bertahan dan nemenin aku sampai 2 bulan ini. semoga kita bisa terus bersama sampai kapan pun.</p>
 <span class="heart-divider">&#128151; &#10024; &#128150;</span>
-<p>aku ingin merayakan banyak anniversary lagi bersamamu. karena kamu adalah segalanya bagiku.</p>
+<p>aku ingin merayakan banyak anniversary lagi bersamamu, keysha. karena kamu adalah segalanya bagiku.</p>
 <span class="heart-divider">&#127801; &#128149; &#127801;</span>
-<p class="signature">&#128140; i love you more than words can say,<br><span style="font-size:1.2rem;">&#128151; fran &#128151;</span></p>
+<p class="signature">&#128140; i love you more than words can say,<br><span style="font-size:1.15rem;">&#128151; fran &#128151;</span></p>
 </div>
 <div class="slide-nav">
 <button class="btn-nav btn-nav-secondary" onclick="prevSlide()">&#11013; sebelumnya</button>
@@ -290,12 +299,12 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 <div class="photo-frame-inner"><img src="FOTO_3" alt="foto 3" onerror="this.style.display='none';this.parentElement.innerHTML='&#128247; foto 3'"></div>
 </div>
 <div class="romantic-quotes">
-<p>&#127799; terima kasih sayangku telah menerima aku sepenuhnya,</p>
+<p>&#127799; terima kasih keysha, sudah menerima aku sepenuhnya,</p>
 <p>makasih udah nemenin aku selama 2 bulan ini, perhatiin aku, cinta ke aku, dan selalu jaga aku walaupun dari jauh.</p>
 <span class="heart-divider">&#128151; &#10024; &#128150;</span>
 <p>makasih juga sudah buat aku jadi laki-laki bahagia ya sayang. semoga cinta kita makin kuat setiap hari.</p>
 <span class="heart-divider">&#127801; &#128149; &#127801;</span>
-<p class="signature">&#128140; dari pacarmu yang selalu bersyukur,<br><span style="font-size:1.2rem;">&#128151; fran &#128151;</span></p>
+<p class="signature">&#128140; dari fran, pacarmu yang selalu bersyukur,<br><span style="font-size:1.15rem;">&#128151; fran &#128151;</span></p>
 </div>
 <div class="slide-nav">
 <button class="btn-nav btn-nav-secondary" onclick="prevSlide()">&#11013; sebelumnya</button>
@@ -312,12 +321,12 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 <div class="photo-frame-inner"><img src="FOTO_4" alt="foto 4" onerror="this.style.display='none';this.parentElement.innerHTML='&#128247; foto 4'"></div>
 </div>
 <div class="romantic-quotes">
-<p>&#128147; 2 bulan bukan akhir, tapi awal dari segalanya,</p>
+<p>&#128147; keysha, 2 bulan bukan akhir, tapi awal dari segalanya,</p>
 <p>aku pengen terus ada di sampingmu, dengerin ceritamu, temenin kamu sedih dan senang.</p>
 <span class="heart-divider">&#128151; &#10024; &#128150;</span>
 <p>kamu adalah alasan aku senyum tiap hari. aku cinta kamu lebih dari yang bisa aku ungkapin.</p>
 <span class="heart-divider">&#127801; &#128149; &#127801;</span>
-<p class="signature">&#128140; with all my love,<br><span style="font-size:1.2rem;">&#128151; fran &#128151;</span></p>
+<p class="signature">&#128140; with all my love,<br><span style="font-size:1.15rem;">&#128151; fran &#128151;</span></p>
 </div>
 <div class="slide-nav">
 <button class="btn-nav btn-nav-secondary" onclick="prevSlide()">&#11013; sebelumnya</button>
@@ -334,12 +343,12 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 <div class="photo-frame-inner"><img src="FOTO_5" alt="foto 5" onerror="this.style.display='none';this.parentElement.innerHTML='&#128247; foto 5'"></div>
 </div>
 <div class="romantic-quotes">
-<p>&#128150; terima kasih untuk 2 bulan yang luar biasa,</p>
+<p>&#128150; terima kasih keysha, untuk 2 bulan yang luar biasa,</p>
 <p>semoga kita terus bersama, tumbuh bareng, dan saling menguatkan sampai kapan pun.</p>
 <span class="heart-divider">&#128151; &#10024; &#128150;</span>
 <p>selamat anniversary sayang. aku sayang kamu, hari ini, besok, dan selamanya.</p>
 <span class="heart-divider">&#127801; &#128149; &#127801;</span>
-<p class="signature">&#128140; forever yours,<br><span style="font-size:1.2rem;">&#128151; fran &#128151;</span></p>
+<p class="signature">&#128140; forever yours,<br><span style="font-size:1.15rem;">&#128151; fran &#128151;</span></p>
 </div>
 <div class="slide-nav">
 <button class="btn-nav btn-nav-secondary" onclick="prevSlide()">&#11013; sebelumnya</button>
@@ -354,12 +363,12 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 <div class="big-love-wrapper">
 <span class="big-love">&#10084;&#65039;</span>
 <div class="big-love-text">i love you more</div>
-<div class="big-love-sub">happy 2 months anniversary &#128149;</div>
-<div class="big-love-sub" style="margin-top:0.5rem;font-size:.95rem;opacity:.85;">always &amp; forever &#127801;</div>
+<div class="big-love-sub">happy 2 months anniversary, keysha &#128149;</div>
+<div class="big-love-sub" style="margin-top:0.5rem;font-size:.92rem;opacity:.85;">always &amp; forever &#127801;</div>
 </div>
 <div style="margin-top:1.5rem;">
 <div class="love-letter">
-<div class="love-letter-text">"sayang, terima kasih sudah jadi bagian dari hidupku. 2 bulan ini terasa singkat tapi penuh makna. aku pengen terus sama kamu, nggak cuma 2 bulan, tapi selamanya. aku sayang kamu, selalu dan selamanya. &#128149;"</div>
+<div class="love-letter-text">"keysha sayang, terima kasih sudah jadi bagian dari hidupku. 2 bulan ini terasa singkat tapi penuh makna. aku pengen terus sama kamu, nggak cuma 2 bulan, tapi selamanya. aku sayang kamu, selalu dan selamanya. &#128149;"</div>
 <div class="love-letter-sign">&mdash; fran &#128151;</div>
 </div>
 </div>
@@ -372,10 +381,10 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 </div>
 <div style="margin-top:1rem;">
 <div class="gift-box" onclick="openGift()">&#127873;</div>
-<div class="gift-message" id="giftMsg">klik kadonya buat kejutan terakhir &#128157;</div>
+<div class="gift-message" id="giftMsg">hadiah dari fran untuk keysha &#128157; klik kadonya ya</div>
 </div>
 <div style="margin-top:1.5rem;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-<button class="btn" onclick="showPage('welcome')" style="font-size:.95rem;padding:.7rem 2rem;background:linear-gradient(160deg,rgba(255,20,147,.2),rgba(199,21,133,.1));color:#ffb6d9;box-shadow:none;border:1px solid rgba(255,105,180,.3);animation:none;">&#128149; kembali ke awal</button>
+<button class="btn" onclick="showPage('welcome')" style="font-size:.92rem;padding:.7rem 2rem;background:linear-gradient(160deg,rgba(255,20,147,.2),rgba(199,21,133,.1));color:#ffb6d9;box-shadow:none;border:1px solid rgba(255,105,180,.3);animation:none;">&#128149; kembali ke awal</button>
 </div>
 </div>
 </div>
@@ -492,11 +501,12 @@ function openEnvelope(){showRomantic();}
 
 function openGift(){
 var msgs=[
-'\uD83D\uDC9D aku cinta kamu selamanya, sayang!',
-'\uD83C\uDF39 kamu adalah hadiah terindah dalam hidupku!',
-'\uD83D\uDC96 terima kasih sudah jadi milikku!',
-'\u2728 semoga kita selalu bersama ya!',
-'\uD83D\uDC95 i love you more than yesterday!'
+'\uD83D\uDC9D fran cinta keysha selamanya, sayang!',
+'\uD83C\uDF39 keysha adalah hadiah terindah dalam hidup fran!',
+'\uD83D\uDC96 terima kasih keysha sudah jadi milik fran!',
+'\u2728 semoga fran & keysha selalu bersama ya!',
+'\uD83D\uDC95 fran love keysha more than yesterday!',
+'\uD83C\uDF81 hadiah spesial dari fran untuk keysha \u2764\uFE0F'
 ];
 document.getElementById('giftMsg').textContent=msgs[Math.floor(Math.random()*msgs.length)];
 for(var i=0;i<4;i++)setTimeout(launchFirework,i*150);
