@@ -154,7 +154,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 <div class="hearts-bg" id="heartsBg"></div>
 
 <audio id="bgMusic" loop>
-<source src="https://github.com/dynanwebsite/buatkesayanganku/raw/refs/heads/main/fran.mp3" type="audio/mpeg">
+<source src="https://github.com/dynanwebsite/buatkesayanganku/raw/refs/heads/main/keysha.mp4" type="audio/mpeg">
 </audio>
 
 <div id="welcome" class="page active">
@@ -253,7 +253,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 <span class="frame-corner tr">&#127800;</span>
 <span class="frame-corner bl">&#128149;</span>
 <span class="frame-corner br">&#10024;</span>
-<div class="photo-frame-inner"><img src="FOTO_1" alt="foto 1" onerror="this.style.display='none';this.parentElement.innerHTML='&#128247; foto 1'"></div>
+<div class="photo-frame-inner"><img src="https://i.ibb.co.com/6crv3XQX/IMG-20260914-WA0013.jpg" alt="foto 1" onerror="this.style.display='none';this.parentElement.innerHTML='&#128247; foto 1'"></div>
 </div>
 <div class="romantic-quotes">
 <p>&#127801; selamat anniversary 2 bulan, keysha cintaku,</p>
@@ -274,7 +274,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 <span class="frame-corner tr">&#127802;</span>
 <span class="frame-corner bl">&#128151;</span>
 <span class="frame-corner br">&#127775;</span>
-<div class="photo-frame-inner"><img src="FOTO_2" alt="foto 2" onerror="this.style.display='none';this.parentElement.innerHTML='&#128247; foto 2'"></div>
+<div class="photo-frame-inner"><img src="https://i.ibb.co.com/4cYg2M7/IMG-20260914-WA0012.jpg" alt="foto 2" onerror="this.style.display='none';this.parentElement.innerHTML='&#128247; foto 2'"></div>
 </div>
 <div class="romantic-quotes">
 <p>&#128149; untuk keysha, cewe terbaik di dunia,</p>
@@ -296,7 +296,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 <span class="frame-corner tr">&#127799;</span>
 <span class="frame-corner bl">&#128158;</span>
 <span class="frame-corner br">&#11088;</span>
-<div class="photo-frame-inner"><img src="FOTO_3" alt="foto 3" onerror="this.style.display='none';this.parentElement.innerHTML='&#128247; foto 3'"></div>
+<div class="photo-frame-inner"><img src="https://i.ibb.co.com/nM5WXT9Z/IMG-20260914-WA0011.jpg" alt="foto 3" onerror="this.style.display='none';this.parentElement.innerHTML='&#128247; foto 3'"></div>
 </div>
 <div class="romantic-quotes">
 <p>&#127799; terima kasih keysha, sudah menerima aku sepenuhnya,</p>
@@ -318,7 +318,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 <span class="frame-corner tr">&#127803;</span>
 <span class="frame-corner bl">&#128147;</span>
 <span class="frame-corner br">&#128171;</span>
-<div class="photo-frame-inner"><img src="FOTO_4" alt="foto 4" onerror="this.style.display='none';this.parentElement.innerHTML='&#128247; foto 4'"></div>
+<div class="photo-frame-inner"><img src="https://i.ibb.co.com/ZR9z7LGY/IMG-20260914-WA0010.jpg" alt="foto 4" onerror="this.style.display='none';this.parentElement.innerHTML='&#128247; foto 4'"></div>
 </div>
 <div class="romantic-quotes">
 <p>&#128147; keysha, 2 bulan bukan akhir, tapi awal dari segalanya,</p>
@@ -340,7 +340,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 <span class="frame-corner tr">&#127801;</span>
 <span class="frame-corner bl">&#128149;</span>
 <span class="frame-corner br">&#10024;</span>
-<div class="photo-frame-inner"><img src="FOTO_5" alt="foto 5" onerror="this.style.display='none';this.parentElement.innerHTML='&#128247; foto 5'"></div>
+<div class="photo-frame-inner"><img src="https://i.ibb.co.com/wrJMDJnc/IMG-20260914-WA0009.jpg" alt="foto 5" onerror="this.style.display='none';this.parentElement.innerHTML='&#128247; foto 5'"></div>
 </div>
 <div class="romantic-quotes">
 <p>&#128150; terima kasih keysha, untuk 2 bulan yang luar biasa,</p>
@@ -480,10 +480,15 @@ showPage('lockscreen');
 resetPinState();
 }
 
+function playMusic(){
+var audio=document.getElementById('bgMusic');
+audio.play().catch(function(){});
+}
+
 function showEnvelope(){
 showPage('envelope');
 var audio=document.getElementById('bgMusic');
-audio.play().catch(function(){});
+if(audio.paused)audio.play().catch(function(){});
 }
 
 function showRomantic(){
@@ -573,11 +578,14 @@ if(pinEntered===CORRECT_PIN){
 e.textContent='\u2705 pin benar! \u2764\uFE0F';
 e.className='pin-error success';
 wrongAttempts=0;
-for(var i=0;i<4;i++)setTimeout(launchFirework,i*150);
+// lagu langsung bunyi pas pin berhasil
+playMusic();
+// ledakan kembang api meriah
+for(var i=0;i<10;i++)setTimeout(launchFirework,i*100);
 setTimeout(function(){
 showEnvelope();
 resetPinState();
-},700);
+},900);
 return;
 }
 wrongAttempts++;
@@ -595,11 +603,6 @@ e.className='pin-error';
 pinEntered='';
 updatePinDisplay();
 }
-
-document.addEventListener('click',function(){
-var a=document.getElementById('bgMusic');
-if(a.paused)a.play().catch(function(){});
-});
 
 document.addEventListener('keydown',function(e){
 if(!document.getElementById('lockscreen').classList.contains('active'))return;
