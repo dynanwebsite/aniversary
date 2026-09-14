@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>Happy Anniversary 2 Bulan - Fran 💕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            min-height: 100vh;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 25%, #ffb6c1 50%, #fecfef 75%, #fdfcfb 100%);
+            background-size: 300% 300%;
+            animation: gradientShift 12s ease infinite;
+            position: relative;
+            overflow-x: hidden;
+            overflow-y: auto;
+            padding: 20px 10px;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating hearts background */
+        .hearts-bg {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .floating-heart {
+            position: absolute;
+            bottom: -80px;
+            font-size: 1.8rem;
+            color: rgba(255, 255, 255, 0.7);
+            animation: floatUp linear infinite;
+            text-shadow: 0 0 20px rgba(255, 100, 150, 0.8);
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(0.6);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-110vh) rotate(360deg) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        /* Confetti */
+        .confetti {
+            position: fixed;
+            top: -20px;
+            width: 10px;
+            height: 10px;
+            z-index: 1;
+            pointer-events: none;
+            animation: confettiFall linear infinite;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(110vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        body::after {
+            content: '❤ ✿ ❀ ✿ ❤ ✿ ❀ ✿ ❤';
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            font-size: 2.8rem;
+            color: rgba(255, 100, 150, 0.06);
+            letter-spacing: 30px;
+            pointer-events: none;
+            animation: floatSymbols 25s linear infinite alternate;
+            transform: scale(1.2);
+        }
+
+        @keyframes floatSymbols {
+            0% {
+                transform: translateY(0px) rotate(-2deg) scale(1);
+                opacity: 0.4;
+            }
+            50% {
+                transform: translateY(-20px) rotate(2deg) scale(1.1);
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(10px) rotate(-1deg) scale(0.95);
+                opacity: 0.4;
+            }
+        }
+
+        .card {
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 48px;
+            padding: 2.5rem 2.5rem;
+            max-width: 720px;
+            width: 94%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(255, 80, 120, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            animation: cardIn 0.6s ease-out;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(255, 105, 180, 0.08), transparent 30%);
+            animation: rotateGlow 10s linear infinite;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        @keyframes rotateGlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes cardIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.85) translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .page {
+            display: none;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .page.active {
+            display: flex;
+        }
+
+        /* ============ WELCOME ============ */
+        #welcome .welcome-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #b3415c;
+            text-shadow: 0 4px 20px rgba(255, 80, 120, 0.3);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+            display: block;
+            animation: titleGlow 2.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes titleGlow {
+            0% { text-shadow: 0 4px 20px rgba(255, 80, 120, 0.3); }
+            100% { text-shadow: 0 4px 40px rgba(255, 80, 120, 0.7), 0 0 60px rgba(255, 105, 180, 0.4); }
+        }
+
+        #welcome .welcome-sub {
+            font-size: 2.2rem;
+            color: #d94f6e;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            display: block;
+            line-height: 1.3;
+        }
+
+        #welcome .welcome-date {
+            font-size: 1.1rem;
+            color: #b3415c;
+            opacity: 0.85;
+            margin-bottom: 1rem;
+            display: block;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+
+        #welcome .welcome-love {
+            font-size: 2rem;
+            color: #e05a7a;
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+            letter-spacing: 18px;
+            display: block;
+            line-height: 1.5;
+            animation: heartPulseText 2s ease-in-out infinite;
+        }
+
+        @keyframes heartPulseText {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.08); opacity: 1; }
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 3.5rem;
+            background: linear-gradient(135deg, #ff6b8a, #ee4e6b);
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            box-shadow: 0 12px 30px rgba(238, 78, 107, 0.5);
+            transition: all 0.3s ease;
+            letter-spacing: 1.5px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            animation: btnPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes btnPulse {
+            0%, 100% { box-shadow: 0 12px 30px rgba(238, 78, 107, 0.5); }
+            50% { box-shadow: 0 12px 45px rgba(238, 78, 107, 0.9), 0 0 30px rgba(255, 105, 180, 0.6); }
+        }
+
+        .btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            background: linear-gradient(135deg, #ff7a96, #e04765);
+        }
+
+        .btn:active {
+            transform: scale(0.96);
+        }
+
+        /* ============ ANNIVERSARY BADGE ============ */
+        .anniv-badge {
+            display: inline-block;
+            padding: 0.6rem 1.8rem;
+            background: linear-gradient(135deg, #ffd700, #ffb6c1, #ff69b4);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.5);
+            text-shadow: 0 2px 6px rgba(180, 60, 90, 0.4);
+            animation: badgeShine 3s ease-in-out infinite;
+        }
+
+        @keyframes badgeShine {
+            0%, 100% { box-shadow: 0 8px 25px rgba(255, 105, 180, 0.5); transform: scale(1); }
+            50% { box-shadow: 0 12px 40px rgba(255, 105, 180, 0.9), 0 0 50px rgba(255, 215, 0, 0.5); transform: scale(1.05); }
+        }
+
+        /* ============ LOCKSCREEN ============ */
+        #lockscreen .card h2 {
+            font-size: 2.2rem;
+            color: #b3415c;
+            margin-bottom: 0.2rem;
+        }
+
+        #lockscreen .card h2 span {
+            display: block;
+            font-size: 1.2rem;
+            color: #d94f6e;
+            margin-top: 0.1rem;
+            font-weight: 400;
+        }
+
+        .pin-display {
+            font-size: 2.5rem;
+            letter-spacing: 16px;
+            color: #b3415c;
+            background: rgba(255, 255, 255, 0.4);
+            padding: 0.6rem 1rem;
+            border-radius: 20px;
+            margin: 0.8rem auto 1.2rem;
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed rgba(180, 60, 90, 0.25);
+            font-weight: 600;
+            max-width: 340px;
+            animation: pinGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes pinGlow {
+            0%, 100% { border-color: rgba(180, 60, 90, 0.25); }
+            50% { border-color: rgba(255, 105, 180, 0.7); }
+        }
+
+        .pin-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            max-width: 280px;
+            margin: 0 auto 0.8rem;
+        }
+
+        .pin-btn {
+            padding: 1rem 0;
+            font-size: 1.8rem;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 18px;
+            cursor: pointer;
+            color: #4a2a3a;
+            transition: all 0.15s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .pin-btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: scale(1.06);
+            box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
+        }
+
+        .pin-btn:active {
+            transform: scale(0.94);
+            background: rgba(255, 200, 200, 0.6);
+        }
+
+        .pin-btn.empty {
+            background: transparent;
+            box-shadow: none;
+            cursor: default;
+            pointer-events: none;
+        }
+
+        .pin-actions {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin: 0.3rem 0 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .pin-actions button {
+            padding: 0.6rem 1.8rem;
+            border: none;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(4px);
+            color: #4a2a3a;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .pin-actions button:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: scale(1.05);
+        }
+
+        .pin-actions .btn-clear {
+            background: rgba(255, 100, 100, 0.18);
+        }
+
+        .pin-actions .btn-clear:hover {
+            background: rgba(255, 100, 100, 0.35);
+        }
+
+        .pin-error {
+            color: #d94f4f;
+            font-size: 1rem;
+            min-height: 2.4rem;
+            font-weight: 500;
+            padding: 0.3rem;
+        }
+
+        .pin-error.success {
+            color: #2e7d32;
+        }
+
+        /* ============ ENVELOPE ============ */
+        #envelope .card h2 {
+            font-size: 2.2rem;
+            color: #b3415c;
+            margin-bottom: 0.3rem;
+        }
+
+        #envelope .sub-text {
+            color: #8a4a5a;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.85;
+        }
+
+        .envelope-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0.5rem 0 1.2rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            animation: envFloat 2.5s ease-in-out infinite;
+        }
+
+        @keyframes envFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+
+        .envelope-container:hover {
+            transform: scale(1.08);
+        }
+
+        .envelope-container:active {
+            transform: scale(0.95);
+        }
+
+        .envelope-svg {
+            width: 180px;
+            height: 140px;
+            filter: drop-shadow(0 8px 30px rgba(180, 60, 90, 0.5));
+        }
+
+        .envelope-svg .envelope-body {
+            fill: #f5a0b5;
+            stroke: #d97a92;
+            stroke-width: 2;
+            transition: fill 0.3s;
+        }
+
+        .envelope-container:hover .envelope-body {
+            fill: #f8b0c5;
+        }
+
+        .envelope-svg .envelope-flap {
+            fill: #f0d0d8;
+            stroke: #d97a92;
+            stroke-width: 2;
+        }
+
+        .envelope-svg .envelope-heart {
+            fill: #e8456a;
+            transform-origin: center;
+            animation: heartBeat 1.8s ease-in-out infinite;
+        }
+
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            15% { transform: scale(1.25); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.18); }
+            60% { transform: scale(1); }
+        }
+
+        .click-hint {
+            color: #b3415c;
+            font-size: 1rem;
+            opacity: 0.8;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* ============ ROMANTIC SLIDE ============ */
+        .slide-photo {
+            display: none;
+        }
+
+        .slide-photo.active {
+            display: block;
+            animation: slideIn 0.6s ease-out;
+        }
+
+        @keyframes slideIn {
+            0% { opacity: 0; transform: translateX(30px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+
+        #romantic .card h2 {
+            font-size: 2rem;
+            color: #b3415c;
+            margin-bottom: 0.3rem;
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
+
+        #romantic .card .sub-romantic {
+            color: #8a4a5a;
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+            opacity: 0.85;
+            font-style: italic;
+        }
+
+        .photo-frame {
+            position: relative;
+            width: 100%;
+            max-width: 520px;
+            margin: 0 auto 1.2rem;
+            padding: 18px;
+            background: linear-gradient(135deg, #ffb6c1, #ff69b4, #ff1493, #ff69b4, #ffb6c1);
+            background-size: 300% 300%;
+            border-radius: 32px;
+            box-shadow: 0 0 30px rgba(255, 20, 147, 0.4), 0 0 60px rgba(255, 105, 180, 0.25);
+            animation: frameGlow 3s ease-in-out infinite alternate, frameBg 5s ease infinite;
+        }
+
+        @keyframes frameBg {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes frameGlow {
+            0% {
+                box-shadow: 0 0 20px rgba(255, 20, 147, 0.3), 0 0 40px rgba(255, 105, 180, 0.15);
+            }
+            100% {
+                box-shadow: 0 0 50px rgba(255, 20, 147, 0.6), 0 0 90px rgba(255, 105, 180, 0.35);
+            }
+        }
+
+        .photo-frame-inner {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            background: #fff;
+            aspect-ratio: 1/1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .photo-frame-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .photo-frame:hover .photo-frame-inner img {
+            transform: scale(1.06);
+        }
+
+        .frame-corner {
+            position: absolute;
+            font-size: 2.4rem;
+            opacity: 0.9;
+            animation: floatCorner 4s ease-in-out infinite;
+            filter: drop-shadow(0 2px 8px rgba(255, 20, 147, 0.4));
+            z-index: 3;
+        }
+
+        .frame-corner.tl { top: -4px; left: -4px; animation-delay: 0s; }
+        .frame-corner.tr { top: -4px; right: -4px; animation-delay: 1s; }
+        .frame-corner.bl { bottom: -4px; left: -4px; animation-delay: 2s; }
+        .frame-corner.br { bottom: -4px; right: -4px; animation-delay: 3s; }
+
+        @keyframes floatCorner {
+            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+            50% { transform: translateY(-8px) rotate(8deg) scale(1.15); }
+        }
+
+        .romantic-quotes {
+            margin: 0.5rem 0 1.2rem;
+            padding: 1.2rem;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            border-left: 4px solid #ff6b8a;
+            border-right: 4px solid #ff6b8a;
+            box-shadow: 0 4px 20px rgba(255, 105, 180, 0.15);
+        }
+
+        .romantic-quotes p {
+            color: #4a2a3a;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .romantic-quotes p:last-child {
+            margin-bottom: 0;
+        }
+
+        .romantic-quotes .heart-divider {
+            display: block;
+            font-size: 1.3rem;
+            color: #e05a7a;
+            margin: 0.4rem 0;
+            letter-spacing: 10px;
+            animation: heartPulseText 2s ease-in-out infinite;
+        }
+
+        .romantic-quotes .signature {
+            font-style: italic;
+            color: #b3415c;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        /* ============ I LOVE YOU ============ */
+        #iloveyou {
+            background: transparent;
+        }
+
+        #iloveyou .card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 2.5rem 2.5rem;
+        }
+
+        .big-love-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.2rem;
+            padding: 0.3rem 0;
+        }
+
+        .big-love {
+            font-size: 9rem;
+            line-height: 1;
+            color: #ffffff;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.9), 0 0 60px rgba(255, 255, 255, 0.6), 0 0 100px rgba(255, 255, 255, 0.4), 0 0 150px rgba(255, 255, 255, 0.2);
+            animation: loveGlow 1.8s ease-in-out infinite alternate;
+            display: inline-block;
+            margin: 0;
+        }
+
+        @keyframes loveGlow {
+            0% {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.3), 0 0 60px rgba(255, 255, 255, 0.1);
+                transform: scale(1);
+            }
+            50% { transform: scale(1.15); }
+            100% {
+                text-shadow: 0 0 40px rgba(255, 255, 255, 1), 0 0 80px rgba(255, 255, 255, 0.7), 0 0 120px rgba(255, 255, 255, 0.5), 0 0 180px rgba(255, 255, 255, 0.3);
+                transform: scale(1.08);
+            }
+        }
+
+        .big-love-text {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+            letter-spacing: 4px;
+            margin: 0;
+            line-height: 1.2;
+            animation: titleGlow 2s ease-in-out infinite alternate;
+        }
+
+        .big-love-sub {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-style: italic;
+            letter-spacing: 2px;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* ============ NAV ============ */
+        .slide-nav {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin-top: 1rem;
+            margin-bottom: 0.2rem;
+            flex-wrap: wrap;
+            padding: 0.5rem 0;
+        }
+
+        .slide-nav .btn-nav {
+            padding: 0.8rem 2.5rem;
+            border: none;
+            border-radius: 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #ff6b8a, #ee4e6b);
+            color: #fff;
+            box-shadow: 0 8px 25px rgba(238, 78, 107, 0.4);
+            min-width: 120px;
+        }
+
+        .slide-nav .btn-nav:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(238, 78, 107, 0.6);
+        }
+
+        .slide-nav .btn-nav:active {
+            transform: scale(0.95);
+        }
+
+        .slide-nav .btn-nav-secondary {
+            background: rgba(255, 255, 255, 0.7);
+            color: #4a2a3a;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .slide-nav .btn-nav-secondary:hover {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .slide-indicator {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 0.8rem;
+        }
+
+        .slide-indicator .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(180, 60, 90, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .slide-indicator .dot.active {
+            background: #ee4e6b;
+            transform: scale(1.3);
+            box-shadow: 0 0 20px rgba(238, 78, 107, 0.6);
+            animation: dotPulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes dotPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(238, 78, 107, 0.6); }
+            50% { box-shadow: 0 0 30px rgba(238, 78, 107, 1); }
+        }
+
+        #bgMusic {
+            display: none;
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 600px) {
+            .card {
+                padding: 1.8rem 1.2rem;
+                border-radius: 32px;
+                max-width: 97%;
+            }
+            #welcome .welcome-title { font-size: 2rem; margin-bottom: 0.3rem; }
+            #welcome .welcome-sub { font-size: 1.5rem; margin-bottom: 0.3rem; }
+            #welcome .welcome-love { font-size: 1.5rem; letter-spacing: 12px; margin-bottom: 1.5rem; }
+            .btn { padding: 0.8rem 2.5rem; font-size: 1.1rem; }
+            .photo-frame { max-width: 95%; padding: 14px; }
+            .frame-corner { font-size: 1.8rem; }
+            .slide-nav { gap: 10px; padding: 0.5rem 0; }
+            .slide-nav .btn-nav { padding: 0.8rem 1.8rem; font-size: 1rem; min-width: 100px; }
+            .romantic-quotes p { font-size: 0.95rem; }
+            #romantic .card h2 { font-size: 1.6rem; }
+            .big-love { font-size: 5.5rem; }
+            .big-love-text { font-size: 2rem; }
+            .big-love-sub { font-size: 1rem; }
+            #iloveyou .card { padding: 1.8rem 1.2rem; }
+            .pin-grid { gap: 8px; max-width: 230px; }
+            .pin-btn { padding: 0.8rem 0; font-size: 1.4rem; }
+            .pin-display { font-size: 1.8rem; letter-spacing: 10px; min-height: 55px; }
+            #lockscreen .card h2 { font-size: 1.6rem; }
+            .envelope-svg { width: 140px; height: 110px; }
+            .anniv-badge { font-size: 0.95rem; padding: 0.5rem 1.4rem; }
+        }
+
+        @media (max-width: 400px) {
+            .card { padding: 1.2rem 0.8rem; }
+            .photo-frame { max-width: 98%; padding: 10px; }
+            .frame-corner { font-size: 1.4rem; }
+            .big-love { font-size: 4.5rem; }
+            .big-love-text { font-size: 1.6rem; }
+            #welcome .welcome-title { font-size: 1.6rem; }
+            #welcome .welcome-sub { font-size: 1.2rem; }
+            #welcome .welcome-love { font-size: 1.2rem; letter-spacing: 8px; margin-bottom: 1rem; }
+            .slide-nav .btn-nav { padding: 0.7rem 1.2rem; font-size: 0.9rem; min-width: 80px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating hearts & confetti -->
+    <div class="hearts-bg" id="heartsBg"></div>
+
+    <!-- ============================================================ -->
+    <!-- 🎵 AUDIO (TIDAK DIUBAH) -->
+    <!-- ============================================================ -->
+    <audio id="bgMusic" loop>
+        <source src="https://github.com/dynanwebsite/buatkesayanganku/raw/refs/heads/main/fran.mp3" type="audio/mpeg" />
+        Browser tidak mendukung audio.
+    </audio>
+
+    <!-- ============================================================ -->
+    <!-- WELCOME -->
+    <!-- ============================================================ -->
+    <div id="welcome" class="page active">
+        <div class="card">
+            <div class="anniv-badge">🎉 2 MONTHS ANNIVERSARY 🎉</div>
+            <div class="welcome-title">Happy Anniversary</div>
+            <div class="welcome-sub">💗 Fran & Sayang 💗</div>
+            <div class="welcome-date">✨ 2 bulan penuh cinta & kebahagiaan ✨</div>
+            <div class="welcome-love">❤ ✿ ❤ ✿ ❤</div>
+            <button class="btn" onclick="showLockscreen()">✨ Masuk ✨</button>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- LOCK SCREEN -->
+    <!-- ============================================================ -->
+    <div id="lockscreen" class="page">
+        <div class="card">
+            <h2>🔐 Masukkan PIN <span>💖 Khusus buat cewe kesayangan Fran 💖</span></h2>
+            <div style="font-size:1.2rem; margin-bottom:0.8rem; letter-spacing:10px; color:#e05a7a; opacity:0.7;">❤ ✿ ❤</div>
+            <div class="pin-display" id="pinDisplay">— — — — — — — —</div>
+            <div class="pin-grid">
+                <button class="pin-btn" onclick="pinInput('1')">1</button>
+                <button class="pin-btn" onclick="pinInput('2')">2</button>
+                <button class="pin-btn" onclick="pinInput('3')">3</button>
+                <button class="pin-btn" onclick="pinInput('4')">4</button>
+                <button class="pin-btn" onclick="pinInput('5')">5</button>
+                <button class="pin-btn" onclick="pinInput('6')">6</button>
+                <button class="pin-btn" onclick="pinInput('7')">7</button>
+                <button class="pin-btn" onclick="pinInput('8')">8</button>
+                <button class="pin-btn" onclick="pinInput('9')">9</button>
+                <button class="pin-btn empty"></button>
+                <button class="pin-btn" onclick="pinInput('0')">0</button>
+                <button class="pin-btn" onclick="pinClear()">⌫</button>
+            </div>
+            <div class="pin-actions">
+                <button class="btn-clear" onclick="pinClearAll()">✕ Hapus</button>
+                <button onclick="pinSubmit()">✔ OK</button>
+            </div>
+            <div class="pin-error" id="pinError"></div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- AMPLOP -->
+    <!-- ============================================================ -->
+    <div id="envelope" class="page">
+        <div class="card">
+            <h2>💌 Ada Surat Anniversary</h2>
+            <p class="sub-text">Klik amplopnya ya sayang 💕</p>
+            <div class="envelope-container" onclick="openEnvelope()">
+                <svg class="envelope-svg" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+                    <rect class="envelope-body" x="10" y="40" width="180" height="110" rx="8" />
+                    <polygon class="envelope-flap" points="10,40 100,90 190,40" />
+                    <g class="envelope-heart">
+                        <circle cx="100" cy="95" r="10" />
+                        <circle cx="112" cy="95" r="10" />
+                        <polygon points="100,80 112,80 118,90 106,108 94,108 82,90" />
+                    </g>
+                    <line x1="30" y1="55" x2="170" y2="55" stroke="#d97a92" stroke-width="1.5" opacity="0.3" />
+                    <line x1="30" y1="130" x2="170" y2="130" stroke="#d97a92" stroke-width="1.5" opacity="0.3" />
+                </svg>
+            </div>
+            <p class="click-hint">👆 Klik amplopnya</p>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ROMANTIC SLIDE -->
+    <!-- ============================================================ -->
+    <div id="romantic" class="page">
+        <div class="card">
+            <div class="anniv-badge">💕 HAPPY 2ND MONTH ANNIVERSARY 💕</div>
+            <h2>💖 Untuk Cewe Kesayangan Fran 💖</h2>
+            <p class="sub-romantic">✨ Tiga kenangan indah untukmu ✨</p>
+            <div class="slide-indicator">
+                <span class="dot active" id="dot1"></span>
+                <span class="dot" id="dot2"></span>
+                <span class="dot" id="dot3"></span>
+            </div>
+
+            <!-- SLIDE 1 -->
+            <div class="slide-photo active" id="slide1">
+                <div class="photo-frame">
+                    <span class="frame-corner tl">❤️</span>
+                    <span class="frame-corner tr">🌸</span>
+                    <span class="frame-corner bl">💕</span>
+                    <span class="frame-corner br">✨</span>
+                    <div class="photo-frame-inner">
+                        <img src="https://i.ibb.co.com/03pZHg1/IMG-20260820-WA0012.jpg" alt="Foto 1" />
+                    </div>
+                </div>
+                <div class="romantic-quotes">
+                    <p>🌹 Selamat anniversary 2 bulan, cintaku,</p>
+                    <p>Dua bulan bukan waktu yang lama, tapi cukup buat aku sadar kalau kamu adalah orang paling berharga dalam hidupku.</p>
+                    <span class="heart-divider">❤️ ✨ 💕</span>
+                    <p>Setiap hari bersamamu terasa seperti hadiah. Senyummu, tawamu, dan perhatianmu bikin hariku selalu cerah.</p>
+                    <span class="heart-divider">💖 🌸 💖</span>
+                    <p class="signature">💌 Dari seseorang yang selalu menyayangimu,<br /><span style="font-size:1.3rem;">💗 Fran 💗</span></p>
+                </div>
+                <div class="slide-nav">
+                    <button class="btn-nav" onclick="nextSlide()">➜ Selanjutnya</button>
+                </div>
+            </div>
+
+            <!-- SLIDE 2 -->
+            <div class="slide-photo" id="slide2">
+                <div class="photo-frame">
+                    <span class="frame-corner tl">💖</span>
+                    <span class="frame-corner tr">🌺</span>
+                    <span class="frame-corner bl">💗</span>
+                    <span class="frame-corner br">🌟</span>
+                    <div class="photo-frame-inner">
+                        <img src="https://i.ibb.co.com/3mhP0c44/IMG-20260820-WA0013.jpg" alt="Foto 2" />
+                    </div>
+                </div>
+                <div class="romantic-quotes">
+                    <p>💕 Untuk cewe terbaik di dunia,</p>
+                    <p>Terima kasih sudah bertahan dan nemenin aku sampai 2 bulan ini. Semoga kita bisa terus bersama sampai kapan pun.</p>
+                    <span class="heart-divider">💗 ✨ 💖</span>
+                    <p>Aku ingin merayakan banyak anniversary lagi bersamamu. Karena kamu adalah segalanya bagiku.</p>
+                    <span class="heart-divider">🌹 💕 🌹</span>
+                    <p class="signature">💌 I Love You More Than Words Can Say,<br /><span style="font-size:1.3rem;">💗 Fran 💗</span></p>
+                </div>
+                <div class="slide-nav">
+                    <button class="btn-nav btn-nav-secondary" onclick="prevSlide()">⬅ Sebelumnya</button>
+                    <button class="btn-nav" onclick="nextSlide()">➜ Selanjutnya</button>
+                </div>
+            </div>
+
+            <!-- SLIDE 3 -->
+            <div class="slide-photo" id="slide3">
+                <div class="photo-frame" style="max-width:520px;">
+                    <span class="frame-corner tl">💖</span>
+                    <span class="frame-corner tr">🌹</span>
+                    <span class="frame-corner bl">💕</span>
+                    <span class="frame-corner br">✨</span>
+                    <div class="photo-frame-inner" style="background:linear-gradient(135deg, #fce4ec, #f8bbd0); display:flex; align-items:center; justify-content:center; padding:2rem;">
+                        <div style="font-size:3rem; text-align:center; color:#b3415c; font-weight:600; line-height:1.6; animation: heartPulseText 2s ease-in-out infinite;">
+                            🎉<br />
+                            <span style="font-size:1.6rem;">2 Bulan</span><br />
+                            <span style="font-size:1.3rem; display:block; margin-top:0.5rem;">Bersama</span>
+                            <span style="font-size:1.8rem; display:block; margin-top:0.3rem;">💕</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="romantic-quotes">
+                    <p>💖 Terima kasih sayangku telah menerima aku sepenuhnya,</p>
+                    <p>Makasih udah nemenin aku selama 2 bulan ini,</p>
+                    <p>Perhatiin aku sayang, cinta ke aku,</p>
+                    <p>Dan selalu jaga aku walaupun dari jauh,</p>
+                    <span class="heart-divider">💗 ✨ 💖</span>
+                    <p>Makasih juga sudah buat aku jadi laki-laki bahagia ya sayang. Semoga anniversary kita terus bertambah setiap tahunnya.</p>
+                    <span class="heart-divider">🌹 💕 🌹</span>
+                    <p class="signature">💌 Dari pacarmu yang selalu bersyukur,<br /><span style="font-size:1.3rem;">💗 Fran 💗</span></p>
+                </div>
+                <div class="slide-nav">
+                    <button class="btn-nav btn-nav-secondary" onclick="prevSlide()">⬅ Sebelumnya</button>
+                    <button class="btn-nav" onclick="showILoveYou()">💖 I Love You More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- I LOVE YOU MORE -->
+    <!-- ============================================================ -->
+    <div id="iloveyou" class="page">
+        <div class="card">
+            <div class="big-love-wrapper">
+                <span class="big-love">❤️</span>
+                <div class="big-love-text">I Love You More</div>
+                <div class="big-love-sub">Happy 2 Months Anniversary 💕</div>
+                <div class="big-love-sub" style="margin-top:0.5rem; font-size:1rem; opacity:0.8;">Always & Forever 🌹</div>
+            </div>
+            <div style="margin-top:1.8rem; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+                <button class="btn" onclick="showPage('welcome')" style="font-size:1rem; padding:0.7rem 2rem; background:rgba(255,255,255,0.3); color:#b3415c; box-shadow:none; border:1px solid rgba(255,255,255,0.5);">
+                    💕 Kembali ke Awal
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const CORRECT_PIN = '14072026';
+        let pinEntered = '';
+        let wrongAttempts = 0;
+        const MAX_WRONG = 3;
+        let currentSlide = 1;
+        const totalSlides = 3;
+
+        // ===== FLOATING HEARTS & CONFETTI =====
+        function createFloatingHearts() {
+            const container = document.getElementById('heartsBg');
+            const heartSymbols = ['❤️', '💖', '💕', '💗', '🌹', '✨', '💘', '💝', '🌸'];
+            const totalHearts = 18;
+
+            for (let i = 0; i < totalHearts; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'floating-heart';
+                heart.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDuration = (8 + Math.random() * 8) + 's';
+                heart.style.animationDelay = (Math.random() * 8) + 's';
+                heart.style.fontSize = (1.2 + Math.random() * 1.8) + 'rem';
+                heart.style.opacity = 0.5 + Math.random() * 0.5;
+                container.appendChild(heart);
+            }
+        }
+
+        function createConfetti() {
+            const colors = ['#ff6b8a', '#ffb6c1', '#ff69b4', '#ffd700', '#ff1493', '#ffa07a', '#fff'];
+            const total = 30;
+            for (let i = 0; i < total; i++) {
+                const c = document.createElement('div');
+                c.className = 'confetti';
+                c.style.left = Math.random() * 100 + '%';
+                c.style.background = colors[Math.floor(Math.random() * colors.length)];
+                c.style.width = (6 + Math.random() * 8) + 'px';
+                c.style.height = (6 + Math.random() * 8) + 'px';
+                c.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+                c.style.animationDuration = (5 + Math.random() * 6) + 's';
+                c.style.animationDelay = (Math.random() * 6) + 's';
+                document.body.appendChild(c);
+            }
+        }
+
+        createFloatingHearts();
+        createConfetti();
+
+        // ===== PAGE NAV =====
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        function showLockscreen() {
+            showPage('lockscreen');
+            resetPinState();
+            document.getElementById('pinError').textContent = '';
+            document.getElementById('pinError').className = 'pin-error';
+        }
+
+        function showEnvelope() {
+            showPage('envelope');
+            // 🎵 LAGU BUNYI PAS AMPLOP MUNCUL
+            const audio = document.getElementById('bgMusic');
+            audio.play().catch(() => {
+                alert('⚠️ Klik layar untuk memutar lagu ya sayang! 💕');
+            });
+        }
+
+        function showRomantic() {
+            showPage('romantic');
+            currentSlide = 1;
+            updateSlide();
+        }
+
+        function showILoveYou() {
+            showPage('iloveyou');
+        }
+
+        function openEnvelope() {
+            showRomantic();
+        }
+
+        function updateSlide() {
+            document.querySelectorAll('.slide-photo').forEach(s => s.classList.remove('active'));
+            const slide = document.getElementById('slide' + currentSlide);
+            if (slide) slide.classList.add('active');
+            document.querySelectorAll('.dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index + 1 === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                updateSlide();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                updateSlide();
+            }
+        }
+
+        // ===== PIN =====
+        function pinInput(digit) {
+            if (pinEntered.length >= 8) return;
+            pinEntered += digit;
+            updatePinDisplay();
+            clearError();
+        }
+
+        function pinClear() {
+            pinEntered = pinEntered.slice(0, -1);
+            updatePinDisplay();
+            clearError();
+        }
+
+        function pinClearAll() {
+            pinEntered = '';
+            updatePinDisplay();
+            clearError();
+        }
+
+        function updatePinDisplay() {
+            const display = document.getElementById('pinDisplay');
+            const masked = pinEntered.padEnd(8, '—');
+            display.textContent = masked.split('').join(' ');
+        }
+
+        function clearError() {
+            const errorEl = document.getElementById('pinError');
+            errorEl.textContent = '';
+            errorEl.className = 'pin-error';
+        }
+
+        function resetPinState() {
+            pinEntered = '';
+            wrongAttempts = 0;
+            updatePinDisplay();
+            const errorEl = document.getElementById('pinError');
+            errorEl.textContent = '';
+            errorEl.className = 'pin-error';
+        }
+
+        function pinSubmit() {
+            const errorEl = document.getElementById('pinError');
+            if (pinEntered.length !== 8) {
+                errorEl.textContent = '❌ PIN harus 8 digit ya sayang!';
+                errorEl.className = 'pin-error';
+                return;
+            }
+            if (pinEntered === CORRECT_PIN) {
+                errorEl.textContent = '✅ PIN Benar! ❤️';
+                errorEl.className = 'pin-error success';
+                wrongAttempts = 0;
+
+                setTimeout(() => {
+                    showEnvelope();
+                    resetPinState();
+                }, 500);
+                return;
+            }
+            wrongAttempts++;
+            const sisa = MAX_WRONG - wrongAttempts;
+            if (wrongAttempts >= MAX_WRONG) {
+                errorEl.textContent = '💌 pin nya ini ya sayang 14072026 💌';
+                errorEl.className = 'pin-error';
+                wrongAttempts = 0;
+                pinEntered = '';
+                updatePinDisplay();
+                return;
+            }
+            errorEl.textContent = `❌ PIN salah! Coba lagi (${sisa}× kesempatan lagi)`;
+            errorEl.className = 'pin-error';
+            pinEntered = '';
+            updatePinDisplay();
+        }
+
+        // ===== AUDIO BYPASS =====
+        document.addEventListener('click', function() {
+            const audio = document.getElementById('bgMusic');
+            if (audio.paused) {
+                audio.play().catch(() => {});
+            }
+        });
+
+        // ===== KEYBOARD =====
+        document.addEventListener('keydown', function(e) {
+            const lockActive = document.getElementById('lockscreen').classList.contains('active');
+            if (!lockActive) return;
+            if (e.key >= '0' && e.key <= '9') {
+                pinInput(e.key);
+            } else if (e.key === 'Backspace') {
+                pinClear();
+            } else if (e.key === 'Enter') {
+                pinSubmit();
+            } else if (e.key === 'Escape' || e.key === 'Delete') {
+                pinClearAll();
+            }
+        });
+    </script>
+</body>
+</html>
