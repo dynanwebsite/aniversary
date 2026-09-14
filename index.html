@@ -113,6 +113,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 .slide-indicator .dot{width:10px;height:10px;border-radius:50%;background:rgba(255,20,147,.25);transition:all .3s}
 .slide-indicator .dot.active{background:#ff1493;transform:scale(1.4);box-shadow:0 0 20px #ff1493}
 #bgMusic{display:none}
+#playManualBtn{position:fixed;bottom:25px;right:25px;z-index:99999;padding:.9rem 1.8rem;background:linear-gradient(135deg,#ff1493,#c71585);color:#fff;border:none;border-radius:50px;font-family:'Poppins',sans-serif;font-size:1rem;font-weight:500;cursor:pointer;box-shadow:0 8px 30px rgba(255,20,147,.7);animation:btnPulse 1.5s ease-in-out infinite;letter-spacing:.5px}
 .gift-box{display:inline-block;font-size:4rem;cursor:pointer;animation:giftShake 1.5s ease-in-out infinite;filter:drop-shadow(0 0 25px rgba(255,20,147,.9))}
 @keyframes giftShake{0%,100%{transform:rotate(0) scale(1)}25%{transform:rotate(-8deg) scale(1.05)}50%{transform:rotate(0) scale(1)}75%{transform:rotate(8deg) scale(1.05)}}
 .gift-message{color:#ffb6d9;font-size:.92rem;font-style:italic;margin-top:.8rem;opacity:.9;font-weight:300}
@@ -153,7 +154,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 
 <div class="hearts-bg" id="heartsBg"></div>
 
-<audio id="bgMusic" loop>
+<audio id="bgMusic" loop preload="auto" playsinline>
 <source src="https://github.com/dynanwebsite/buatkesayanganku/raw/refs/heads/main/keysha.mp3" type="audio/mpeg">
 </audio>
 
@@ -480,15 +481,41 @@ showPage('lockscreen');
 resetPinState();
 }
 
-function playMusic(){
+function tryPlayMusic(){
 var audio=document.getElementById('bgMusic');
-audio.play().catch(function(){});
+audio.volume=1.0;
+audio.muted=false;
+audio.currentTime=0;
+var p=audio.play();
+if(p!==undefined){
+p.then(function(){
+var btn=document.getElementById('playManualBtn');
+if(btn)btn.remove();
+}).catch(function(){
+showPlayButton();
+});
+}
+}
+
+function showPlayButton(){
+if(document.getElementById('playManualBtn'))return;
+var btn=document.createElement('button');
+btn.id='playManualBtn';
+btn.textContent='\u25B6 putar lagu';
+btn.onclick=function(){
+var a=document.getElementById('bgMusic');
+a.volume=1.0;
+a.muted=false;
+a.play().then(function(){
+btn.remove();
+}).catch(function(){});
+};
+document.body.appendChild(btn);
 }
 
 function showEnvelope(){
 showPage('envelope');
-var audio=document.getElementById('bgMusic');
-if(audio.paused)audio.play().catch(function(){});
+tryPlayMusic();
 }
 
 function showRomantic(){
@@ -578,7 +605,7 @@ if(pinEntered===CORRECT_PIN){
 e.textContent='\u2705 pin benar! \u2764\uFE0F';
 e.className='pin-error success';
 wrongAttempts=0;
-playMusic();
+tryPlayMusic();
 for(var i=0;i<10;i++)setTimeout(launchFirework,i*100);
 setTimeout(function(){
 showEnvelope();
@@ -601,6 +628,18 @@ e.className='pin-error';
 pinEntered='';
 updatePinDisplay();
 }
+
+document.addEventListener('click',function(){
+var a=document.getElementById('bgMusic');
+if(a.paused){
+a.volume=1.0;
+a.muted=false;
+a.play().then(function(){
+var btn=document.getElementById('playManualBtn');
+if(btn)btn.remove();
+}).catch(function(){});
+}
+},true);
 
 document.addEventListener('keydown',function(e){
 if(!document.getElementById('lockscreen').classList.contains('active'))return;
